@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../img/bg3.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.card-body{
+    font-weight: 400;
+}
+.card-title{
+    font-weight: 700;
+}
+.card{
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 20); 
+
+}
+.google-button{
+    background-color: whitesmoke;
+    text-decoration: none;
+    color: black;
+    padding: 15px;
+    transition: 0.5s;
+}

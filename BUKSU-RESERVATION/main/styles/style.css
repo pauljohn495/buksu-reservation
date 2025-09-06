@@ -1,0 +1,268 @@
+/* Global Reset */
+* {
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    position: relative
+  }
+  
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+    background-color: whitesmoke;
+    min-height: 100vh;
+  }
+  
+  /* NAV-BAR */
+  nav {
+    height: 4.25rem;
+    background-color: #001c38;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .links-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  nav a {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.5rem;
+    height: 100%;
+    padding: 0 5px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    margin-right: 20px;
+  }
+  
+  nav a::after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 85%;
+    background-color: white;
+    left: 6.3px;
+    bottom: 15px;
+    transition: transform 0.3s ease-in-out;
+    transform: scaleX(0);
+  }
+  
+  nav a:hover::after {
+    transform: scaleX(1);
+  }
+  
+  nav .home-link {
+    margin-left: 30px;
+    margin-right: auto;
+    width: 60px;
+  }
+  
+  #sidebar-active {
+    display: none;
+  }
+  
+  .open-sidebar, .close-sidebar {
+    padding: 0 20px;
+    display: none;
+  }
+  
+  /* WELCOME IMAGE */
+  .container-welcome {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .box-welcome {
+    position: relative;
+    height: 30.2rem;
+  }
+  
+  .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  
+  .box-welcome h1 {
+    margin-top: 20px;
+    color: white;
+    font-size: 6rem;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0 4rem;
+    text-align: center;
+    font-weight: 200;
+    backdrop-filter: blur(4px);
+  }
+  
+  /* ROOMS */
+  .rooms {
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 50px;
+    bottom: 20px;
+    position: relative;
+    z-index: 2;
+    width: 80%;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 25px;
+  }
+  
+  /* ABOUT */
+  .about {
+    width: 100%;
+    background-color: #0352a2;
+  }
+  .card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds the box shadow */
+    border-radius: 10px; /* Optional: Adds rounded corners to the card */
+    transition: box-shadow 0.3s ease; /* Optional: Adds a smooth transition for the shadow */
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increases the shadow effect when hovering */
+}
+  .about-text {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    object-fit: cover;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 30rem;
+    background-image: url('../img/about-logo.jpg');
+
+  }
+  .about-us{
+    color: white;
+    font-weight: 600;
+    font-size: 5rem;
+    margin-left: 80px;
+  }
+  .about-text p {
+    padding: 30px;
+    margin-left: 50px;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  
+  /* PROFILE */
+  .profile-container {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding-bottom: 30px;
+  }
+  
+  .paul, .melig, .michael {
+    transition: transform 0.2s;
+  }
+  
+  .paul:hover, .melig:hover, .michael:hover {
+    transform: scale(1.04);
+  }
+  
+  /* MEDIA QUERIES */
+  @media(max-width: 910px) {
+    .box-welcome {
+      height: 20rem;
+    }
+    .box-welcome h1 {
+      padding: 20px;
+      font-size: 55px;
+    }
+    .room-welcome {
+      width: 80%;
+      padding: 10px;
+    }
+  }
+  
+  @media(max-width: 600px) {
+    .about-us{
+        font-size: 3rem;
+    }
+    nav a::after {
+      width: 40%;
+    }
+    .links-container {
+      flex-direction: column;
+      align-items: flex-start;
+      position: fixed;
+      top: 0;
+      right: -100%;
+      z-index: 10;
+      width: 100%;
+      background-color: black;
+      box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+      transition: 0.4s ease-in-out;
+    }
+    nav a {
+      height: auto;
+      width: 100%;
+      padding: 20px 30px;
+      justify-content: flex-start;
+    }
+    .open-sidebar, .close-sidebar {
+      display: block;
+      padding: 20px;
+    }
+    #sidebar-active:checked ~ .links-container {
+      right: 0;
+    }
+    .home-link {
+      width: 100px;
+      margin-left: 1rem;
+      transform: none;
+    }
+    .room-welcome {
+      width: 80%;
+    }
+    .box-welcome {
+      height: 15rem;
+    }
+    .box-welcome h1 {
+      font-size: 30px;
+    }
+    .about {
+      height: auto;
+    }
+  }
+
+  @media(max-width: 450px) {
+    .rooms{
+      width: 100%;
+      height: 100%;
+    }
+
+  }
+
+  
+  @media only screen and (min-width: 600px) {
+    .room-welcome {
+      width: 40%;
+    }
+  }
+  
+  @media only screen and (min-width: 768px) {}
+  @media only screen and (min-width: 992px) {}
+  @media only screen and (min-width: 1200px) {}
+  
